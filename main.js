@@ -87,3 +87,194 @@ console.log("Age in Days:", ageDays);
 console.log("Age in Hours:", ageHours);
 
 console.log("Turn 100 in:", turn100);
+
+
+/*Task 7.3 Functions*/
+
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+const add = function(a, b) {
+    return a + b;
+};
+
+const multiply = (a, b) => a * b;
+
+const divide = (a, b) => {
+    if (b === 0) {
+        return "Cannot divide by zero";
+    }
+
+    return a / b;
+};
+
+function calculateArea(width, height) {
+    return width * height;
+}
+
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9 / 5) + 32;
+}
+
+function isEven(number) {
+    return number % 2 === 0;
+}
+
+function getInitials(fullName) {
+
+    let names = fullName.split(" ");
+
+    return names[0][0] + names[1][0];
+}
+
+function reverseString(str) {
+
+    return str.split("").reverse().join("");
+
+}
+
+function greetUser(name = "Guest", greeting = "Hello") {
+
+    return `${greeting}, ${name}!`;
+
+}
+
+function calculateTip(bill, tipPercent = 15) {
+
+    return bill * (tipPercent / 100);
+
+}
+
+console.log(greet("Moise"));
+
+console.log(add(5, 7));
+
+console.log(multiply(3, 5));
+
+console.log(divide(10, 2));
+
+console.log(calculateArea(4, 5));
+
+console.log(celsiusToFahrenheit(25));
+
+console.log(isEven(8));
+
+console.log(getInitials("Moise Nyarugabo"));
+
+console.log(reverseString("JavaScript"));
+
+console.log(greetUser());
+
+console.log(calculateTip(1000));
+
+/*Task 7.4 */
+/* 1st Function  */
+function getGrade(score) {
+/*control flow*/
+    if (score >= 90) {
+
+        return "A";
+
+    } else if (score >= 80) {
+
+        return "B";
+
+    } else if (score >= 70) {
+
+        return "C";
+
+    } else if (score >= 60) {
+
+        return "D";
+
+    } else {
+
+        return "F";
+
+    }
+
+}
+
+console.log(getGrade(87));
+/*2nd function  */
+function getDayName(dayNumber) {
+
+    switch(dayNumber) {
+
+        case 0:
+            return "Sunday";
+
+        case 1:
+            return "Monday";
+
+        case 2:
+            return "Tuesday";
+
+        case 3:
+            return "Wednesday";
+
+        case 4:
+            return "Thursday";
+
+        case 5:
+            return "Friday";
+
+        case 6:
+            return "Saturday";
+
+        default:
+            return "Invalid Day";
+    }
+
+}
+
+console.log(getDayName(5));
+
+// Numbers 1-100
+
+for(let i=1;i<=100;i++){
+
+    console.log(i);
+
+}
+
+// Even numbers
+
+for(let i=2;i<=50;i+=2){
+
+    console.log(i);
+
+}
+
+// FizzBuzz
+
+for(let i=1;i<=100;i++){
+
+    if(i%3===0 && i%5===0){
+
+        console.log("FizzBuzz");
+
+    }else if(i%3===0){
+
+        console.log("Fizz");
+
+    }else if(i%5===0){
+
+        console.log("Buzz");
+
+    }else{
+
+        console.log(i);
+
+    }
+
+}
+
+// Triangle
+
+for(let i=1;i<=5;i++){
+
+    console.log("*".repeat(i));
+
+}
