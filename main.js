@@ -349,3 +349,210 @@ console.log(calculate(10, "/", 5));   // 2
 console.log(calculate(10, "/", 0));   // Error message
 console.log(calculate(10, "%", 3));   // 1
 console.log(calculate(2, "**", 3));   // 8
+
+/* Task 8.1: Arrays*/
+
+// Creating arrays
+const fruits = ["apple", "banana", "orange"];
+const numbers = [1, 2, 3, 4, 5];
+const mixed = ["hello", 42, true, null];
+
+// Accessing elements
+console.log(fruits[0]);
+console.log(fruits.length);
+
+// Modifying arrays
+fruits.push("grape");
+fruits.unshift("mango");
+fruits.pop();
+fruits.shift();
+
+console.log(fruits);
+
+/* Exercise 2: Array Methods*/
+
+const nums = [1, 2, 3, 4, 5];
+
+// forEach
+nums.forEach(function(num) {
+    console.log(num * 2);
+});
+
+// map
+const doubled = nums.map(function(num) {
+    return num * 2;
+});
+console.log(doubled);
+
+// filter
+const evenNumbers = nums.filter(function(num) {
+    return num % 2 === 0;
+});
+console.log(evenNumbers);
+
+// find
+const firstEven = nums.find(function(num) {
+    return num % 2 === 0;
+});
+console.log(firstEven);
+
+// reduce
+const sum = nums.reduce(function(total, num) {
+    return total + num;
+}, 0);
+console.log(sum);
+
+// includes
+console.log(nums.includes(3));
+
+/* Build Exercises*/
+
+const values = [2, -3, 6, 12, -8, 15];
+
+// Double all numbers
+const doubleValues = values.map(function(num) {
+    return num * 2;
+});
+console.log(doubleValues);
+
+// Filter negative numbers
+const positiveNumbers = values.filter(function(num) {
+    return num >= 0;
+});
+console.log(positiveNumbers);
+
+// Find first number greater than 10
+const greaterThanTen = values.find(function(num) {
+    return num > 10;
+});
+console.log(greaterThanTen);
+
+// Product of all numbers
+const product = values.reduce(function(total, num) {
+    return total * num;
+}, 1);
+console.log(product);
+
+/* Task 8.2: Objects*/
+
+// Creating an object
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    isStudent: false,
+    hobbies: ["reading", "coding", "gaming"],
+    address: {
+        city: "New York",
+        country: "USA"
+    }
+};
+
+// Accessing properties
+console.log(person.firstName);
+console.log(person["lastName"]);
+console.log(person.address.city);
+
+// Modifying properties
+person.age = 31;
+person.email = "john@example.com";
+delete person.isStudent;
+
+console.log(person);
+
+/* Object Methods*/
+
+const calculator = {
+    add: function(a, b) {
+        return a + b;
+    },
+
+    subtract: function(a, b) {
+        return a - b;
+    },
+
+    multiply: function(a, b) {
+        return a * b;
+    }
+};
+
+console.log(calculator.add(5, 3));
+console.log(calculator.subtract(8, 2));
+console.log(calculator.multiply(4, 5));
+
+
+/* Object Iteration*/
+
+const scores = {
+    math: 95,
+    english: 88,
+    science: 92
+};
+
+console.log(Object.keys(scores));
+console.log(Object.values(scores));
+console.log(Object.entries(scores));
+
+for (const [subject, score] of Object.entries(scores)) {
+    console.log(subject + ": " + score);
+}
+
+
+/* Task 8.3: Array of Object*/
+
+const students = [
+    { name: "Alice", age: 22, grade: 85, major: "CS" },
+    { name: "Bob", age: 20, grade: 72, major: "Math" },
+    { name: "Charlie", age: 23, grade: 90, major: "CS" },
+    { name: "Diana", age: 21, grade: 88, major: "Physics" },
+    { name: "Eve", age: 22, grade: 95, major: "CS" }
+];
+
+// 1. Get all student names
+const names = students.map(function(student) {
+    return student.name;
+});
+console.log(names);
+
+// 2. Students with grade > 80
+const highAchievers = students.filter(function(student) {
+    return student.grade > 80;
+});
+console.log(highAchievers);
+
+// 3. Find Charlie
+const charlie = students.find(function(student) {
+    return student.name === "Charlie";
+});
+console.log(charlie);
+
+// 4. Average grade
+const avgGrade = students.reduce(function(total, student) {
+    return total + student.grade;
+}, 0) / students.length;
+
+console.log(avgGrade);
+
+// 5. CS majors
+const csMajors = students.filter(function(student) {
+    return student.major === "CS";
+});
+console.log(csMajors);
+
+// 6. Sort by grade
+const sortedByGrade = [...students].sort(function(a, b) {
+    return b.grade - a.grade;
+});
+console.log(sortedByGrade);
+
+// 7. Grade above 90
+const hasTopStudent = students.some(function(student) {
+    return student.grade > 90;
+});
+console.log(hasTopStudent);
+
+// 8. All passing
+const allPassing = students.every(function(student) {
+    return student.grade >= 60;
+});
+console.log(allPassing);
